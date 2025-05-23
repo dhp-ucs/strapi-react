@@ -15,7 +15,7 @@ import BlogPost from './pages/BlogPost.jsx';
 function App() {
   return (
     <>
-      <div className="h-screen w-full  bg-black text-white">
+      <div className="h-screen w-full text-white">
         <Toaster />
         <Routes>
           <Route path="/" element={<Layout />}>
