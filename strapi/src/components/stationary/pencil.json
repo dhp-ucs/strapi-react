@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_stationary_pencils",
+  "info": {
+    "displayName": "Pencil"
+  },
+  "options": {},
+  "attributes": {
+    "brandName": {
+      "type": "string"
+    }
+  }
+}

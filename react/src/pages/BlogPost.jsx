@@ -7,10 +7,10 @@ const BlogPost = () => {
   const [blogPost, setBlogPost] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const { slug } = useParams();
   useEffect(() => {
     // /articles?populate=*
-    fetchApi(`/articles/?filters[title][$eq]=${slug}&populate=*`)
+    // fetchApi(`/articles/?filters[title][$eq]=${slug}&populate=*`)
+    fetchApi(`/articles`)
       .then((res) => {
         setBlogPost(res.data.data);
       })
@@ -19,7 +19,7 @@ const BlogPost = () => {
           setLoading(false);
         }
       });
-  }, [slug]);
+  }, []);
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-gray-100">

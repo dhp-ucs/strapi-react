@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import { Link, Outlet } from 'react-router-dom';
 import { fetchApi } from '../utils/fetchApi';
 import Loader from '../utils/Loader';
+import Markdown from 'react-markdown';
 
 const Blog = () => {
   const [blog, setBlog] = useState([]);
@@ -20,7 +21,13 @@ const Blog = () => {
       });
   }, []);
   // console.log(blog);
-
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-gray-100">
+        <div className="text-gray-600 text-lg">Loading...</div>
+      </div>
+    );
+  }
   return (
     <div className="min-h-screen bg-gray-100 text-gray-900">
       {isLoading ? (
@@ -31,8 +38,35 @@ const Blog = () => {
         <div className="max-w-5xl mx-auto px-4 py-8">
           <h1 className="text-3xl font-bold mb-6">Blog Articles</h1>
 
+          <Link to={'/articles/new'}>
+            <button className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+              Create New Article
+            </button>
+          </Link>
+
+          <Link className=" ml-10" to={'/strapi/blog'}>
+            <button className="bg-orange-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+              Create New Article from strapi
+            </button>
+          </Link>
+
           <div className="grid md:grid-cols-2 gap-6">
-            {blog.map((e) => (
+            {blog.map((e, index) => {
+              console.log(e, 'seedhe maut');
+              return (
+                <div key={e.id}>
+                  <h1 className="text-4xl md:text-5xl font-extrabold text-green-700 mb-4">
+                    {e.title}
+                  </h1>
+                  <img
+                    src={'http://localhost:1337' + e.featuredImage.url}
+                    alt=""
+                  />
+                  <Markdown>{e.content}</Markdown>
+                </div>
+              );
+            })}
+            {/* {blog.map((e) => (
               <div
                 key={e.id}
                 className="p-6 bg-white rounded-xl shadow hover:shadow-lg transition"
@@ -54,7 +88,7 @@ const Blog = () => {
                   ).toLocaleString()}
                 </p>
               </div>
-            ))}
+            ))} */}
           </div>
         </div>
       )}

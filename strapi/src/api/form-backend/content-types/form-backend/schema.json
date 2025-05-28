@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "form_backends",
+  "info": {
+    "singularName": "form-backend",
+    "pluralName": "form-backends",
+    "displayName": "formBackend",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "inputs": {
+      "type": "component",
+      "repeatable": false,
+      "component": "backend-designing.backend-design"
+    }
+  }
+}

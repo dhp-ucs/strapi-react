@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "input_articles",
+  "info": {
+    "singularName": "input-article",
+    "pluralName": "input-articles",
+    "displayName": "Input Article",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "articleTitle": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

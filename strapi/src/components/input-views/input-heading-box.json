@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_input_views_input_heading_boxes",
+  "info": {
+    "displayName": "inputHeadingBox"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

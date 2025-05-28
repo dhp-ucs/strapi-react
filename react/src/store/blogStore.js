@@ -2,7 +2,7 @@ import { create } from 'zustand';
 
 import { devtools, persist } from 'zustand/middleware';
 
-const blogStore = (set) => ({
+export const blogStore = (set) => ({
   blogs: [],
   addBlog: (blog) => {
     set((state) => ({
@@ -15,6 +15,4 @@ const blogStore = (set) => ({
       blogs: state.blogs.filter((c) => c.id !== courseId),
     }));
   },
-
-  
 });

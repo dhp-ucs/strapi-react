@@ -8,9 +8,10 @@ import { Route, Routes } from 'react-router-dom';
 import Layout from './layout/Layout';
 import Blog from './pages/Blog.jsx';
 import HomePage from './pages/HomePage';
-import SingleBlog from './pages/SingleBlog.jsx';
 import About from './pages/About.jsx';
 import BlogPost from './pages/BlogPost.jsx';
+import Article from './pages/Article.jsx';
+import ArticleStrapi from './pages/ArticleStrapi.jsx';
 
 function App() {
   return (
@@ -22,7 +23,9 @@ function App() {
             <Route index element={<HomePage />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/about" element={<About />} />
-            <Route path="blogpost/:slug" element={<BlogPost />} />
+            <Route path="blogpost" element={<BlogPost />} />
+            <Route path="articles/:slug" element={<Article />} />
+            <Route path="/strapi/blog" element={<ArticleStrapi />} />
           </Route>
         </Routes>
       </div>

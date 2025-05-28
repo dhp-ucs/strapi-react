@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_backend_designing_backend_designs",
+  "info": {
+    "displayName": "backendDesign",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description1": {
+      "type": "text"
+    },
+    "inputFields": {
+      "displayName": "inputHeadingBox",
+      "type": "component",
+      "repeatable": true,
+      "component": "input-views.input-heading-box"
+    }
+  }
+}
